@@ -1,0 +1,10 @@
+{
+  "model": "Flix-AI/flix-swissgerman-full",
+  "n": 200,
+  "mean_clip_s": 8.177778125,
+  "p50_ms": 454.27420000032726,
+  "p90_ms": 590.5634999997346,
+  "p99_ms": 796.6482569983231,
+  "rtf": 0.05614029006198618,
+  "gpu": "NVIDIA GeForce RTX 5070"
+}

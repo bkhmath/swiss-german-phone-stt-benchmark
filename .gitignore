@@ -1,0 +1,6 @@
+.venv/
+data/
+__pycache__/
+*.pyc
+results/run_all.log
+results/analyze_stdout.txt

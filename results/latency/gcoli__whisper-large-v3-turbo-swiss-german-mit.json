@@ -1,0 +1,10 @@
+{
+  "model": "gcoli/whisper-large-v3-turbo-swiss-german-mit",
+  "n": 200,
+  "mean_clip_s": 8.177778125,
+  "p50_ms": 199.5808500005296,
+  "p90_ms": 248.92177000010633,
+  "p99_ms": 304.16173199997496,
+  "rtf": 0.02427819830340417,
+  "gpu": "NVIDIA GeForce RTX 5070"
+}

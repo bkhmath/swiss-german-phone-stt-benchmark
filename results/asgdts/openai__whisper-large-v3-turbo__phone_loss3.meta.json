@@ -1,0 +1,10 @@
+{
+  "model": "openai/whisper-large-v3-turbo",
+  "dataset": "asgdts",
+  "condition": "phone_loss3",
+  "n": 5750,
+  "audio_hours": 12.718433020833332,
+  "wall_s": 561.2156032999992,
+  "batch_rtf": 0.012257266511018217,
+  "gpu": "NVIDIA GeForce RTX 5070"
+}

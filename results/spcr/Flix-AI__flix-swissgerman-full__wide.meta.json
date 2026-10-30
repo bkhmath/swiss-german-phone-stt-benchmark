@@ -1,0 +1,10 @@
+{
+  "model": "Flix-AI/flix-swissgerman-full",
+  "dataset": "spcr",
+  "condition": "wide",
+  "n": 429,
+  "audio_hours": 5.776726579861111,
+  "wall_s": 652.7350469999992,
+  "batch_rtf": 0.031387203172370405,
+  "gpu": "NVIDIA GeForce RTX 5070"
+}

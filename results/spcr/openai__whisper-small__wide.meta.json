@@ -1,0 +1,10 @@
+{
+  "model": "openai/whisper-small",
+  "dataset": "spcr",
+  "condition": "wide",
+  "n": 429,
+  "audio_hours": 5.776726579861109,
+  "wall_s": 207.0538622999993,
+  "batch_rtf": 0.009956324045266246,
+  "gpu": "NVIDIA GeForce RTX 5070"
+}
