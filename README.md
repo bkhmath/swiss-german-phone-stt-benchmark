@@ -6,7 +6,7 @@ measured the way a phone voice agent hears it: **G.711 narrowband audio**, with 
 
 ## Key findings
 
-1. **Swiss German fine-tunes make fewer word errors but more number errors.** On spontaneous
+1. **Swiss German fine-tunes can lower WER and still make more number errors.** On spontaneous
    parliamentary speech over a G.711 line, both fine-tuned checkpoints get numbers wrong more often
    than the base model they started from:
 
@@ -22,7 +22,10 @@ measured the way a phone voice agent hears it: **G.711 narrowband audio**, with 
    `3700` → "dreitausendsebhundert", `2022 bis 2025` → "2020 bis 25", `2021` → "2020".
    *Number errors here exclude numbers lost in skipped passages (finding 4), which is a long-form
    decoding problem rather than a number problem.*
-   **Choosing an STT model on WER alone would pick the model that is worse at amounts and dates.**
+   **Choosing an STT model on WER alone can pick a model that is worse at numbers.**
+   This holds for spontaneous speech only: on the short read sentences of the dialect set, number
+   recall is high for the large models (95–98 %) and the fine-tunes are not worse. Flix's high
+   parliament WER comes mostly from skipped passages (finding 4).
 
 2. **The phone line costs 1–4 WER points, and the best model is also the most robust.**
    On the dialect test set (the cleanest comparison), G.711 adds +2.0 to +2.3 points for large-v3,
@@ -108,6 +111,13 @@ Licences matter for a product: several popular Swiss German checkpoints are CC B
 - Both fine-tuned models saw Bern parliament data in training (SPC / SPC_R train). SPC_R test is a held-out
   split, but same parliament and partly same speakers, so their SPC_R numbers are optimistic.
   The dialect set is the cleaner comparison.
+- SPC_R references are not human transcripts: they are Whisper pseudo-labels corrected by an LLM against
+  session protocols, so some "errors" may be reference errors. The dialect set's references are the
+  sentences speakers were asked to read.
+- The number analysis is exploratory: the fine-tune effect was noticed on turbo-SG, and the error
+  categories, the ≥ 5-word skip threshold and the French filter were chosen after seeing results. Flix,
+  evaluated afterwards, points the same way, but the effect should be confirmed on fresh data.
+  Intervals are not corrected for multiple comparisons.
 - SPC_R has no speaker ids, so its bootstrap resamples segments; one MP can appear in several
   segments, so those intervals are probably somewhat too narrow.
 - The number normaliser handles digits, Swiss thousand separators, cardinal words and "zweimal",
